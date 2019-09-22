@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Ajit Bonam</authors>
+    <owners>Ajit Bonam</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/bajitkumar/Connector.Twitter.Activities</projectUrl>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+		Originally authored by Rammohan Banda as Connector.Twitter.Activities https://github.com/Rammohan91/Connector.Twitter.Activities
+		In this version, the Get_Tweets activity was modified to provide two additional configurable Boolean properties: 
+		FetchUserDetails and FetchFullText. 
+		The Get_Tweets method shall return data based on the values of these additional properties.
+		This package only contains the Get_Tweets activity. For Publish, ReTweet, Delete etc. activities, use Connector.Twitter.Activities
+	</description>
+    <releaseNotes>This is based on Rammohan Banda's Connector.Twitter.Activities. The Get_Tweets activity was 
+	modified to provide two configurable Boolean properties: FetchUserDetails and FetchFullText. 
+	The Get_Tweets method shall return data based on the values of these additional properties.</releaseNotes>
+	<repository type="git" url="https://github.com/bajitkumar/Connector.Twitter.Activities.git"></repository>
+    <tags>Twitter GetTweets</tags>
+  </metadata>
+</package>

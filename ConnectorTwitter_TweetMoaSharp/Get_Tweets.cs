@@ -36,6 +36,14 @@ namespace Twitter
         [RequiredArgument]
         public InArgument<String> SearchKey { get; set; }
 
+        [Category("Tweet Details")]
+        [RequiredArgument]
+        public InArgument<Boolean> FetchUserDetails { get; set; }
+
+        [Category("Tweet Details")]
+        [RequiredArgument]
+        public InArgument<Boolean> FetchFullText { get; set; }
+
         /*
         public enum type
         {
@@ -61,9 +69,7 @@ namespace Twitter
             service = new TwitterService(ConsumerKey.Get(context),
                       ConsumerSecret.Get(context),
                       AccessToken.Get(context),
-                      AccessSecret.Get(context));
-
-            service.TraceEnabled = true;
+                      AccessSecret.Get(context)) { TraceEnabled = true };
 
             var tweetsSearch = service.Search(new SearchOptions
             {
@@ -89,7 +95,8 @@ namespace Twitter
                     //tweet.Id; //Id of the tweet
                     //tweet.User.ScreenName;  //Screen Name of the user
                     //tweet.User.Name;   //Name of the User
-                    //tweet.Text; // Text of the tweet
+                    //tweet.Text; // Trimmed Text of the tweet
+                    //tweet.FullText; // Full Text of the tweet
                     //tweet.RetweetCount; //No of retweet on twitter  
                     //tweet.User.FavouritesCount; //No of Fav mark on twitter  
                     //tweet.User.ProfileImageUrl; //Profile Image of Tweet  
@@ -99,14 +106,16 @@ namespace Twitter
                     //"https://twitter.com/intent/favorite?tweet_id=" + tweet.Id; //For Favorite  
 
                     //Above are the things we can also get using TweetSharp.  
-                    dtTweet.Rows.Add(tweet.Id, 
-                        tweet.User.Name, 
-                        tweet.User.ScreenName, 
-                        tweet.Text, 
+                    dtTweet.Rows.Add(
+                        FetchUserDetails.Get(context) ? tweet.Id : 0L,
+                        FetchUserDetails.Get(context) ? tweet.User.Name : "",
+                        FetchUserDetails.Get(context) ? tweet.User.ScreenName : "",
+                        FetchFullText.Get(context) ? tweet.FullText : tweet.Text, 
                         tweet.CreatedDate, 
                         tweet.RetweetCount, 
-                        tweet.FavoriteCount, 
-                        tweet.User.ProfileImageUrl);
+                        tweet.FavoriteCount,
+                        FetchUserDetails.Get(context) ? tweet.User.ProfileImageUrl : ""
+                        );
             }
             OutputResult.Set(context, dtTweet);
         }

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ConnectorTwitter_TweetMoaSharp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Connect_To_Twitter")]
+[assembly: AssemblyDescription("Based on Ramohan Banda's Connector.Twitter.Activities. https://github.com/Rammohan91/Connector.Twitter.Activities")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("ConnectorTwitter_TweetMoaSharp")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("")]
+[assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
